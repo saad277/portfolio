@@ -37,7 +37,7 @@ export function Skills() {
             <StaggerItem key={group.title} className={wide}>
               <SpotlightCard className="h-full p-6">
                 <div className="mb-5 flex items-center gap-3">
-                  <span className="grid size-10 place-items-center rounded-xl border border-line bg-white/[0.04] text-accent-2">
+                  <span className="grid size-10 place-items-center rounded-xl border border-line bg-fg/[0.04] text-accent-2">
                     <Icon className="size-5" />
                   </span>
                   <h3 className="font-display text-lg font-semibold">{group.title}</h3>
@@ -46,7 +46,7 @@ export function Skills() {
                   {group.items.map((item) => (
                     <li
                       key={item}
-                      className="rounded-lg border border-line bg-white/[0.02] px-3 py-1.5 text-sm text-muted transition-colors hover:border-line-strong hover:text-fg"
+                      className="rounded-lg border border-line bg-fg/[0.02] px-3 py-1.5 text-sm text-muted transition-colors hover:border-line-strong hover:text-fg"
                     >
                       {item}
                     </li>

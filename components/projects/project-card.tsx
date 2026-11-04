@@ -62,7 +62,7 @@ export function ProjectCard({ project, priority = false }: { project: Project; p
           <p className="mt-1.5 text-sm leading-relaxed text-muted">{project.tagline}</p>
           <div className="mt-auto flex flex-wrap gap-1.5 pt-5">
             {project.platforms.map((p) => (
-              <span key={p} className="rounded-md bg-white/[0.05] px-2 py-0.5 font-mono text-[0.7rem] text-subtle">
+              <span key={p} className="rounded-md bg-fg/[0.05] px-2 py-0.5 font-mono text-[0.7rem] text-subtle">
                 {p}
               </span>
             ))}

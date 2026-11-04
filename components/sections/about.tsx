@@ -84,7 +84,7 @@ export function About() {
           {focus.map(({ icon: Icon, title, body }) => (
             <StaggerItem key={title}>
               <SpotlightCard className="h-full p-6">
-                <span className="mb-5 grid size-11 place-items-center rounded-xl border border-line bg-white/[0.04] text-accent transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-105">
+                <span className="mb-5 grid size-11 place-items-center rounded-xl border border-line bg-fg/[0.04] text-accent transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-105">
                   <Icon className="size-5" />
                 </span>
                 <h3 className="font-display text-lg font-semibold">{title}</h3>

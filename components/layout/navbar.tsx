@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { navLinks, site } from "@/data/site";
 import { easeOut } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 function useActiveSection() {
   const [active, setActive] = useState<string | null>(null);
@@ -92,7 +93,7 @@ export function Navbar() {
                 {active === link.id && (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-0 rounded-full bg-white/[0.08]"
+                    className="absolute inset-0 rounded-full bg-fg/[0.08]"
                     transition={{ type: "spring", stiffness: 380, damping: 32 }}
                   />
                 )}
@@ -101,9 +102,10 @@ export function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <a
               href={`mailto:${site.email}`}
-              className="hidden h-10 items-center rounded-full bg-fg px-5 text-sm font-semibold text-bg transition-colors hover:bg-white md:inline-flex"
+              className="hidden h-10 items-center rounded-full bg-fg px-5 text-sm font-semibold text-bg transition-colors hover:bg-fg/85 md:inline-flex"
             >
               Let&apos;s talk
             </a>

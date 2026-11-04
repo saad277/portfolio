@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Light is the default palette; [data-theme="dark"] below swaps the same tokens. */
 @theme {
-  --color-bg: #07070b;
-  --color-surface: #0f0f16;
-  --color-surface-2: #161620;
-  --color-line: rgb(255 255 255 / 0.08);
-  --color-line-strong: rgb(255 255 255 / 0.16);
-  --color-fg: #ececf1;
-  --color-muted: #9b9bab;
-  --color-subtle: #6b6b7b;
-  --color-accent: #8b7bff;
-  --color-accent-2: #3ee0cf;
+  --color-bg: #f7f6f2;
+  --color-surface: #ffffff;
+  --color-surface-2: #efeee9;
+  --color-line: rgb(24 22 40 / 0.09);
+  --color-line-strong: rgb(24 22 40 / 0.18);
+  --color-fg: #16151d;
+  --color-muted: #52515f;
+  --color-subtle: #72717f;
+  --color-accent: #6550f0;
+  --color-accent-mid: #a48cff;
+  --color-accent-2: #0b8a7d;
+  --color-shade: rgb(30 27 60 / 0.14);
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -25,7 +30,25 @@
 }
 
 :root {
+  color-scheme: light;
+  --grain-opacity: 0.025;
+}
+
+[data-theme="dark"] {
   color-scheme: dark;
+  --grain-opacity: 0.035;
+  --color-bg: #07070b;
+  --color-surface: #0f0f16;
+  --color-surface-2: #161620;
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.16);
+  --color-fg: #ececf1;
+  --color-muted: #9b9bab;
+  --color-subtle: #6b6b7b;
+  --color-accent: #8b7bff;
+  --color-accent-mid: #c4b5fd;
+  --color-accent-2: #3ee0cf;
+  --color-shade: rgb(0 0 0 / 0.5);
 }
 
 html {
@@ -35,28 +58,29 @@ html {
 
 body {
   background: var(--color-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
   color: var(--color-fg);
   font-family: var(--font-sans);
 }
 
 ::selection {
   background: color-mix(in oklab, var(--color-accent) 40%, transparent);
-  color: white;
+  color: var(--color-fg);
 }
 
-/* Film grain overlay — adds texture to the flat dark background. */
+/* Film grain overlay — adds texture to the flat background. */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 60;
-  opacity: 0.035;
+  opacity: var(--grain-opacity);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @utility text-gradient {
-  background-image: linear-gradient(100deg, var(--color-accent) 10%, #c4b5fd 45%, var(--color-accent-2) 90%);
+  background-image: linear-gradient(100deg, var(--color-accent) 10%, var(--color-accent-mid) 45%, var(--color-accent-2) 90%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -64,8 +88,8 @@ body::after {
 
 @utility bg-grid {
   background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in oklab, var(--color-fg) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-fg) 5%, transparent) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 

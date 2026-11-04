@@ -7,16 +7,16 @@ import { cn } from "@/lib/utils";
 export function SpotlightCard({
   children,
   className,
-  color = "139 123 255",
+  color = "var(--color-accent)",
 }: {
   children: React.ReactNode;
   className?: string;
-  /** Space-separated RGB triplet for the glow. */
+  /** Any CSS colour for the glow; defaults to the theme accent. */
   color?: string;
 }) {
   const x = useMotionValue(-200);
   const y = useMotionValue(-200);
-  const background = useMotionTemplate`radial-gradient(360px circle at ${x}px ${y}px, rgb(${color} / 0.12), transparent 70%)`;
+  const background = useMotionTemplate`radial-gradient(360px circle at ${x}px ${y}px, color-mix(in oklab, ${color} 12%, transparent), transparent 70%)`;
 
   return (
     <div

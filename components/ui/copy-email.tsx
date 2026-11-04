@@ -21,7 +21,7 @@ export function CopyEmail({ email }: { email: string }) {
     <button
       type="button"
       onClick={copy}
-      className="inline-flex h-12 items-center gap-2 rounded-full border border-line-strong bg-white/[0.03] px-5 text-sm font-medium text-fg backdrop-blur transition-colors hover:bg-white/[0.08]"
+      className="inline-flex h-12 items-center gap-2 rounded-full border border-line-strong bg-fg/[0.03] px-5 text-sm font-medium text-fg backdrop-blur transition-colors hover:bg-fg/[0.07]"
       aria-live="polite"
     >
       <AnimatePresence mode="wait" initial={false}>

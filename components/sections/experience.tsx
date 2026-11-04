@@ -26,7 +26,7 @@ export function Experience() {
         <motion.div
           aria-hidden
           style={{ scaleY }}
-          className="absolute top-2 bottom-2 left-0 w-px origin-top bg-linear-to-b from-accent via-violet-300 to-accent-2 md:left-[calc(14rem+2.5rem)]"
+          className="absolute top-2 bottom-2 left-0 w-px origin-top bg-linear-to-b from-accent via-accent-mid to-accent-2 md:left-[calc(14rem+2.5rem)]"
         />
 
         <ol>

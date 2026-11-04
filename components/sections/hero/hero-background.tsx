@@ -9,7 +9,7 @@ export function HeroBackground() {
   const my = useMotionValue(30);
   const x = useSpring(mx, { stiffness: 60, damping: 20 });
   const y = useSpring(my, { stiffness: 60, damping: 20 });
-  const spotlight = useMotionTemplate`radial-gradient(600px circle at ${x}% ${y}%, rgb(139 123 255 / 0.14), transparent 60%)`;
+  const spotlight = useMotionTemplate`radial-gradient(600px circle at ${x}% ${y}%, color-mix(in oklab, var(--color-accent) 14%, transparent), transparent 60%)`;
 
   useEffect(() => {
     function onMove(e: PointerEvent) {

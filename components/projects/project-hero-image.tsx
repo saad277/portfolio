@@ -27,7 +27,7 @@ export function ProjectHeroImage({ image, accent }: { image: ProjectImage; accen
         className="absolute inset-x-[10%] -top-10 bottom-10 rounded-full blur-[100px]"
         style={{ backgroundColor: `rgb(${rgb} / 0.3)` }}
       />
-      <motion.div style={{ scale }} className="relative overflow-hidden rounded-3xl border border-line-strong shadow-2xl shadow-black/50">
+      <motion.div style={{ scale }} className="relative overflow-hidden rounded-3xl border border-line-strong shadow-2xl shadow-shade">
         <Image
           src={image.src}
           alt={image.alt}
