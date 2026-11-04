@@ -10,6 +10,7 @@ export const fadeUp: Variants = {
   show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.7, ease: easeOut } },
 };
 
+
 export const stagger = (staggerChildren = 0.08, delayChildren = 0): Variants => ({
   hidden: {},
   show: { transition: { staggerChildren, delayChildren } },
