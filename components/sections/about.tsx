@@ -31,11 +31,10 @@ export function About() {
   return (
     <section id="about" className="container-page py-24 md:py-32">
       <SectionHeading
-        index="01"
         eyebrow="About"
         title={
           <>
-            Engineering that holds up in <span className="text-gradient">production</span>.
+            Engineering that holds up in <span className="text-accent">production</span>.
           </>
         }
       />

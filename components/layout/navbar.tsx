@@ -67,7 +67,7 @@ export function Navbar() {
             className="group flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight"
             onClick={() => setOpen(false)}
           >
-            <span className="grid size-9 place-items-center rounded-xl bg-linear-to-br from-accent to-accent-2 text-sm font-bold text-bg transition-transform group-hover:rotate-6">
+            <span className="grid size-9 place-items-center rounded-xl bg-brand text-sm font-bold text-on-brand transition-transform group-hover:rotate-6">
               SS
             </span>
             <span className="hidden sm:inline">{site.name}</span>
@@ -105,7 +105,7 @@ export function Navbar() {
             <ThemeToggle />
             <a
               href={`mailto:${site.email}`}
-              className="hidden h-10 items-center rounded-full bg-fg px-5 text-sm font-semibold text-bg transition-colors hover:bg-fg/85 md:inline-flex"
+              className="hidden h-10 items-center rounded-full bg-brand px-5 text-sm font-semibold text-on-brand transition-colors hover:bg-brand/90 md:inline-flex"
             >
               Let&apos;s talk
             </a>
@@ -136,7 +136,7 @@ export function Navbar() {
               variants={{ show: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } } }}
               className="container-page flex h-full flex-col justify-center gap-2"
             >
-              {navLinks.map((link, i) => (
+              {navLinks.map((link) => (
                 <motion.li
                   key={link.id}
                   variants={{ hidden: { opacity: 0, x: -24 }, show: { opacity: 1, x: 0 } }}
@@ -145,9 +145,8 @@ export function Navbar() {
                   <Link
                     href={`/#${link.id}`}
                     onClick={() => setOpen(false)}
-                    className="flex items-baseline gap-4 py-2 font-display text-5xl font-semibold tracking-tight"
+                    className="block py-2 font-display text-5xl font-semibold tracking-tight"
                   >
-                    <span className="font-mono text-sm text-accent">0{i + 1}</span>
                     {link.label}
                   </Link>
                 </motion.li>

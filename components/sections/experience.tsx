@@ -14,7 +14,6 @@ export function Experience() {
   return (
     <section id="experience" className="container-page py-24 md:py-32">
       <SectionHeading
-        index="02"
         eyebrow="Experience"
         title="Where I've been building."
         description="Six years across product companies, startups and agencies — leading teams, shipping apps and owning releases."
@@ -26,7 +25,7 @@ export function Experience() {
         <motion.div
           aria-hidden
           style={{ scaleY }}
-          className="absolute top-2 bottom-2 left-0 w-px origin-top bg-linear-to-b from-accent via-accent-mid to-accent-2 md:left-[calc(14rem+2.5rem)]"
+          className="absolute top-2 bottom-2 left-0 w-px origin-top bg-brand md:left-[calc(14rem+2.5rem)]"
         />
 
         <ol>
@@ -39,7 +38,7 @@ export function Experience() {
 
             <span
               aria-hidden
-              className="absolute top-2 left-0 size-3 -translate-x-1/2 rounded-full border-2 border-accent bg-bg shadow-[0_0_0_4px_var(--color-bg),0_0_16px_var(--color-accent)] md:left-[calc(14rem+2.5rem)]"
+              className="absolute top-2 left-0 size-3 -translate-x-1/2 rounded-full border-2 border-brand bg-bg shadow-[0_0_0_4px_var(--color-bg)] md:left-[calc(14rem+2.5rem)]"
             />
 
             <div className="space-y-8">

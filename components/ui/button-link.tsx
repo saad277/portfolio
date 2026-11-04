@@ -5,7 +5,7 @@ type Variant = "primary" | "ghost";
 
 const styles: Record<Variant, string> = {
   primary:
-    "bg-fg text-bg hover:bg-fg/85 shadow-[0_0_0_1px_var(--color-line),0_8px_30px_-8px_color-mix(in_oklab,var(--color-accent)_60%,transparent)]",
+    "bg-brand text-on-brand hover:bg-brand/90 shadow-lg shadow-brand/25",
   ghost: "border border-line-strong bg-fg/[0.03] text-fg hover:bg-fg/[0.07] backdrop-blur",
 };
 

@@ -6,6 +6,7 @@ export const site = {
   currentRole: "Lead Software Engineer at BerTech LLC",
   location: "Karachi, Pakistan · Working remotely",
   email: "saadsheikh27@gmail.com",
+  phone: { display: "+92-333023-1707", tel: "+923330231707" },
   resume: "/saad-sheikh-resume.pdf",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   description:
@@ -29,8 +30,7 @@ export const navLinks = [
 export const stats = [
   { value: 6, suffix: "+", label: "Years building software" },
   { value: 15, suffix: "+", label: "Products shipped" },
-  { value: 5, suffix: "+", label: "Years of React Native" },
-  { value: 3, suffix: "", label: "Platforms: web, mobile, desktop" },
+  { label: "Platforms", tags: ["Web", "Mobile", "Desktop"] },
 ] as const;
 
 export const education = [

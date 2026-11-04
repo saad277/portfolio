@@ -32,7 +32,7 @@ export function CopyEmail({ email }: { email: string }) {
           exit={{ opacity: 0, scale: 0.6 }}
           transition={{ duration: 0.15 }}
         >
-          {copied ? <Check className="size-4 text-accent-2" /> : <Copy className="size-4" />}
+          {copied ? <Check className="size-4 text-accent" /> : <Copy className="size-4" />}
         </motion.span>
       </AnimatePresence>
       {copied ? "Copied!" : "Copy email"}

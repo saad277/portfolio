@@ -22,7 +22,6 @@ export function Skills() {
   return (
     <section id="skills" className="container-page py-24 md:py-32">
       <SectionHeading
-        index="04"
         eyebrow="Toolbox"
         title="The stack behind the work."
         description="Tools I reach for to take a product from idea to App Store, and from staging to production."
@@ -37,7 +36,7 @@ export function Skills() {
             <StaggerItem key={group.title} className={wide}>
               <SpotlightCard className="h-full p-6">
                 <div className="mb-5 flex items-center gap-3">
-                  <span className="grid size-10 place-items-center rounded-xl border border-line bg-fg/[0.04] text-accent-2">
+                  <span className="grid size-10 place-items-center rounded-xl border border-line bg-fg/[0.04] text-accent">
                     <Icon className="size-5" />
                   </span>
                   <h3 className="font-display text-lg font-semibold">{group.title}</h3>

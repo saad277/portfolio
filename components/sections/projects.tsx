@@ -9,11 +9,10 @@ export function Projects() {
   return (
     <section id="projects" className="container-page py-24 md:py-32">
       <SectionHeading
-        index="03"
         eyebrow="Selected work"
         title={
           <>
-            Products I&apos;ve <span className="text-gradient">shipped</span>.
+            Products I&apos;ve <span className="text-accent">shipped</span>.
           </>
         }
         description="AI-powered SaaS, DeFi, marketplaces and consumer apps across web, iOS and Android. Open any project for the full case study."

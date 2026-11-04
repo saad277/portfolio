@@ -9,6 +9,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
 import { Magnetic } from "@/components/motion/magnetic";
 import { Counter } from "@/components/motion/counter";
+import { Tag } from "@/components/ui/tag";
 import { HeroBackground } from "./hero-background";
 import portrait from "@/public/saad.jpg";
 import { RotatingWord } from "./rotating-word";
@@ -23,17 +24,10 @@ export function Hero() {
       <motion.div initial="hidden" animate="show" variants={stagger(0.09, 0.15)} className="container-page relative">
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-14">
           <div className="min-w-0">
-            <motion.div variants={fadeUp} className="mb-8 flex items-center gap-4">
-              {/* Compact avatar on small screens; the full portrait sits beside the copy on large ones. */}
-              <span className="relative size-14 shrink-0 overflow-hidden rounded-2xl border border-line-strong shadow-lg shadow-shade lg:hidden">
-                <Image src={portrait} alt="" fill sizes="56px" placeholder="blur" className="object-cover" />
-              </span>
-              <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-surface/60 py-1.5 pr-4 pl-2 text-sm text-muted backdrop-blur">
-                <span className="relative flex size-2.5">
-                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent-2 opacity-60" />
-                  <span className="relative inline-flex size-2.5 rounded-full bg-accent-2" />
-                </span>
-                {site.currentRole}
+            {/* Compact avatar on small screens; the full portrait sits beside the copy on large ones. */}
+            <motion.div variants={fadeUp} className="mb-8 lg:hidden">
+              <span className="relative block size-16 shrink-0 overflow-hidden rounded-2xl border border-line-strong shadow-lg shadow-shade">
+                <Image src={portrait} alt="" fill sizes="64px" placeholder="blur" className="object-cover" />
               </span>
             </motion.div>
 
@@ -100,7 +94,7 @@ export function Hero() {
             transition={{ duration: 1, ease: easeOut, delay: 0.35 }}
             className="relative hidden w-[19rem] xl:w-[21rem] lg:block"
           >
-            <div aria-hidden className="absolute -inset-3 rounded-[2.25rem] bg-linear-to-br from-accent/40 via-accent-mid/20 to-accent-2/40 blur-2xl" />
+            <div aria-hidden className="absolute inset-0 translate-x-4 translate-y-4 rounded-[2rem] bg-brand" />
             <div className="relative overflow-hidden rounded-[2rem] border border-line-strong bg-surface p-2 shadow-2xl shadow-shade">
               <div className="relative aspect-square overflow-hidden rounded-[1.5rem]">
                 <Image
@@ -117,13 +111,23 @@ export function Hero() {
           </motion.figure>
         </div>
 
-        <motion.dl variants={fadeUp} className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4">
+        <motion.dl variants={fadeUp} className="mt-20 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
           {stats.map((s) => (
             <div key={s.label} className="bg-bg/80 p-6 backdrop-blur">
               <dt className="text-sm text-muted">{s.label}</dt>
-              <dd className="mt-2 font-display text-4xl font-semibold tracking-tight">
-                <Counter value={s.value} suffix={s.suffix} />
-              </dd>
+              {"tags" in s ? (
+                <dd className="mt-3 flex flex-wrap gap-2">
+                  {s.tags.map((t) => (
+                    <Tag key={t} className="px-3.5 py-1.5 text-sm text-fg">
+                      {t}
+                    </Tag>
+                  ))}
+                </dd>
+              ) : (
+                <dd className="mt-2 font-display text-4xl font-semibold tracking-tight">
+                  <Counter value={s.value} suffix={s.suffix} />
+                </dd>
+              )}
             </div>
           ))}
         </motion.dl>
